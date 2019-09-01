@@ -13,7 +13,7 @@ Implements CustomActions
 ' This class serves as an example only.
 
 
-Private Const MY_FAVORITE_WORKBOOK_PATH As String = "C:\path\to\myFavoriteWorkbook\"
+Private Const MY_FAVORITE_WORKBOOK_PATH As String = "C:\Users\Public\Documents\"
 Private Const MY_FAVORITE_WORKBOOK_NAME As String = "example.xlsm"
 
 
