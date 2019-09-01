@@ -103,15 +103,15 @@ Public Sub deleteMenu()
     'For each control, check if its name matches the names of our custom menus - using this method deletes multiple instances of the menu in case duplicates are mistakenly created.
     Dim cbControl
     On Error Resume Next
-    For Each cbControl In CommandBars(1).Controls               'TODO if more menus are added, should use a collection instead of multiple if statements (keep code DRY)
-        If cbControl.caption = MENU_TITLE Then
-            Debug.Print "Deleting" & MENU_TITLE
-            cbControl.Delete
-        End If
-        If cbControl.caption = XML_MENU_TITLE Then
-            Debug.Print "Deleting" & XML_MENU_TITLE
-            cbControl.Delete
-        End If
+    For Each cbControl In CommandBars(1).Controls
+        Select Case cbControl.caption
+            Case MENU_TITLE 
+                Debug.Print "Deleting" & MENU_TITLE
+                cbControl.Delete
+            Case XML_MENU_TITLE 
+                Debug.Print "Deleting" & XML_MENU_TITLE
+                cbControl.Delete
+        End Select
     Next cbControl
     On Error GoTo 0
 End Sub
